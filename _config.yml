@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "zh-CN"
 site_theme               : "air" # Currently available options are "default", "air"
-title                    : "FlinJack's Blog"
+title                    : "FlinJack's Blog" 
 title_separator          : "-"
-name                     : &name "fu jiajun"
+name                     : &name "FlinJack"
 description              : &description "This is my own blog page"
 url                      : https://FlinJack.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -54,7 +54,7 @@ author:
   # Social media
   facebook         : # Usernam  foursquare       : # Username
   instagram        : # Username
-  steam            : # Username
+  steam            : Nachoneko
   telegram         : # URL
   twitter          : # Username for X / Twitter
   youtube          : # Username
