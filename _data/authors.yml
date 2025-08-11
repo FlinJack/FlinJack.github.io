@@ -1,13 +1,14 @@
 # Authors
 
-Name Name:
-  name        : "Name Name"
-  uri         : "http://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
+FlinJack:
+  name        : "FlinJack"
+  uri         : "http://flinjack.github.io"
+  email       : "fjj2090868900@outlook.com"
+  bio         : "Software Engineering student @ Shanxi University."
   avatar      : "bio-photo-2.jpg"
   twitter     : "name"
   google_plus : "Name"
+  steam       : "76561199048024145"
 
 Name2 Name2:
   name        : "Name2 Name2"
