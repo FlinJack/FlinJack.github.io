@@ -7,12 +7,12 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
-site_theme               : "default" # Currently available options are "default", "air"
+locale                   : "zh-CN"
+site_theme               : "air" # Currently available options are "default", "air"
 title                    : "FlinJack's Blog"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+name                     : &name "fu jiajun"
+description              : &description "This is my own blog page"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -24,12 +24,12 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "FlinJack"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  pronouns         : "he/him" 
+  bio              : "Software Engineering student @ Shanxi University."
+  location         : "XinZhou,Shanxi"
+  employer         : "Shanxi University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "fjj2090868900@outlook.com" 
 
   # Academic websites
   academia         : # URL
