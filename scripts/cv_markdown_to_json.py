@@ -249,11 +249,11 @@ def parse_skills(skills_text):
     return skills_entries
 
 def parse_publications(pub_dir):
-    """Parse publications from the _publications directory."""
-    publications = []
+    """Parse notes from the _publications directory."""
+    notes = []
     
     if not os.path.exists(pub_dir):
-        return publications
+        return notes
     
     for pub_file in sorted(glob.glob(os.path.join(pub_dir, "*.md"))):
         with open(pub_file, 'r', encoding='utf-8') as file:
@@ -273,16 +273,16 @@ def parse_publications(pub_dir):
                 "summary": front_matter.get('excerpt', '')
             }
             
-            publications.append(pub_entry)
+            notes.append(pub_entry)
     
-    return publications
+    return notes
 
 def parse_talks(talks_dir):
-    """Parse talks from the _talks directory."""
-    talks = []
+    """Parse tech from the _talks directory."""
+    tech = []
     
     if not os.path.exists(talks_dir):
-        return talks
+        return tech
     
     for talk_file in sorted(glob.glob(os.path.join(talks_dir, "*.md"))):
         with open(talk_file, 'r', encoding='utf-8') as file:
@@ -302,16 +302,16 @@ def parse_talks(talks_dir):
                 "description": front_matter.get('excerpt', '')
             }
             
-            talks.append(talk_entry)
+            tech.append(talk_entry)
     
-    return talks
+    return tech
 
 def parse_teaching(teaching_dir):
-    """Parse teaching from the _teaching directory."""
-    teaching = []
+    """Parse life from the _teaching directory."""
+    life = []
     
     if not os.path.exists(teaching_dir):
-        return teaching
+        return life
     
     for teaching_file in sorted(glob.glob(os.path.join(teaching_dir, "*.md"))):
         with open(teaching_file, 'r', encoding='utf-8') as file:
@@ -322,7 +322,7 @@ def parse_teaching(teaching_dir):
         if front_matter_match:
             front_matter = yaml.safe_load(front_matter_match.group(1))
             
-            # Extract teaching details
+            # Extract life details
             teaching_entry = {
                 "course": front_matter.get('title', ''),
                 "institution": front_matter.get('venue', ''),
@@ -331,16 +331,16 @@ def parse_teaching(teaching_dir):
                 "description": front_matter.get('excerpt', '')
             }
             
-            teaching.append(teaching_entry)
+            life.append(teaching_entry)
     
-    return teaching
+    return life
 
 def parse_portfolio(portfolio_dir):
-    """Parse portfolio items from the _portfolio directory."""
-    portfolio = []
+    """Parse projects items from the _portfolio directory."""
+    projects = []
     
     if not os.path.exists(portfolio_dir):
-        return portfolio
+        return projects
     
     for portfolio_file in sorted(glob.glob(os.path.join(portfolio_dir, "*.md"))):
         with open(portfolio_file, 'r', encoding='utf-8') as file:
@@ -351,18 +351,18 @@ def parse_portfolio(portfolio_dir):
         if front_matter_match:
             front_matter = yaml.safe_load(front_matter_match.group(1))
             
-            # Extract portfolio details
+            # Extract projects details
             portfolio_entry = {
                 "name": front_matter.get('title', ''),
-                "category": front_matter.get('collection', 'portfolio'),
+                "category": front_matter.get('collection', 'projects'),
                 "date": front_matter.get('date', ''),
                 "url": front_matter.get('permalink', ''),
                 "description": front_matter.get('excerpt', '')
             }
             
-            portfolio.append(portfolio_entry)
+            projects.append(portfolio_entry)
     
-    return portfolio
+    return projects
 
 def create_cv_json(md_file, config_file, repo_root, output_file):
     """Create a JSON CV from markdown and other repository data."""
@@ -386,17 +386,17 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
         "references": []
     }
     
-    # Add publications
-    cv_json["publications"] = parse_publications(os.path.join(repo_root, "_publications"))
+    # Add notes
+    cv_json["notes"] = parse_publications(os.path.join(repo_root, "_publications"))
     
-    # Add talks
+    # Add tech
     cv_json["presentations"] = parse_talks(os.path.join(repo_root, "_talks"))
     
-    # Add teaching
-    cv_json["teaching"] = parse_teaching(os.path.join(repo_root, "_teaching"))
+    # Add life
+    cv_json["life"] = parse_teaching(os.path.join(repo_root, "_teaching"))
     
-    # Add portfolio
-    cv_json["portfolio"] = parse_portfolio(os.path.join(repo_root, "_portfolio"))
+    # Add projects
+    cv_json["projects"] = parse_portfolio(os.path.join(repo_root, "_portfolio"))
     
     # Extract languages and interests from config if available
     if 'languages' in config:

@@ -3,7 +3,7 @@
 
 # # Publications markdown generator for academicpages
 # 
-# Takes a set of bibtex of publications and converts them for use with [academicpages.github.io](academicpages.github.io). This is an interactive Jupyter notebook ([see more info here](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)). 
+# Takes a set of bibtex of notes and converts them for use with [academicpages.github.io](academicpages.github.io). This is an interactive Jupyter notebook ([see more info here](http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html)). 
 # 
 # The core python code is also in `pubsFromBibs.py`. 
 # Run either from the `markdown_generator` folder after replacing updating the publist dictionary with:
@@ -24,13 +24,13 @@ import html
 import os
 import re
 
-#todo: incorporate different collection types rather than a catch all publications, requires other changes to template
+#todo: incorporate different collection types rather than a catch all notes, requires other changes to template
 publist = {
     "proceeding": {
         "file" : "proceedings.bib",
         "venuekey": "booktitle",
         "venue-pretext": "In the proceedings of ",
-        "collection" : {"name":"publications",
+        "collection" : {"name":"notes",
                         "permalink":"/publication/"}
         
     },
@@ -38,7 +38,7 @@ publist = {
         "file": "pubs.bib",
         "venuekey" : "journal",
         "venue-pretext" : "",
-        "collection" : {"name":"publications",
+        "collection" : {"name":"notes",
                         "permalink":"/publication/"}
     } 
 }
