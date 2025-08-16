@@ -1,5 +1,5 @@
 ---
-title: "Teaching experience 3"
+title: "这是第一篇（前面俩是示例）"
 collection: life
 type: "Workshop"
 permalink: /life/2025-spring-life-3
