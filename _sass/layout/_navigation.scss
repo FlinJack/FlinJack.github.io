@@ -128,7 +128,7 @@
      ========================================================================== */
   
   .active {
-    color: var(--global-base-color);
-    font-weight: bold;
+    color: var(--global-masthead-link-color-hover) !important; // 改成 hover 的高亮色
+  font-weight: bold;
   }
   
