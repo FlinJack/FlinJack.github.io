@@ -131,5 +131,16 @@
      .greedy-nav .visible-links a:active {
        color: var(--global-masthead-link-color-hover) !important;
        font-weight: bold !important;
+
+       &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        background: var(--global-base-color); // 或者 var(--global-border-color)，看你主题
+        transform: scaleX(1);  // 让下划线始终展开
      }
+    }
      
