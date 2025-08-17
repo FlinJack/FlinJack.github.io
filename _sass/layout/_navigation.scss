@@ -127,8 +127,9 @@
      只需要确保 active 状态统一使用 color + bold
      ========================================================================== */
   
-  .active {
-    color: var(--global-masthead-link-color-hover) !important; // 改成 hover 的高亮色
-  font-weight: bold;
-  }
-  
+     .greedy-nav .visible-links a.active,
+     .greedy-nav .visible-links a:active {
+       color: var(--global-masthead-link-color-hover) !important;
+       font-weight: bold !important;
+     }
+     
