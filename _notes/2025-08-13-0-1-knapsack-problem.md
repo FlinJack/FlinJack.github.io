@@ -1,6 +1,5 @@
 ---
 title: "0-1 背包问题及动态规划题解"
-collection: notes
 category: algorithms
 tags: [动态规划, 算法, 0-1背包]
 permalink: /notes/2025-08-13-0-1-knapsack-problem
@@ -47,9 +46,41 @@ int main() {
             if(j < v[i])
                 f[i][j] = f[i-1][j];
             else
-                f[i][j] = max(f[i-1][j], f[i-1][j - v[i]] + w[i]);
+                f[i][j] = max(f[i][j], f[i-1][j - v[i]] + w[i]);
         }
 
     cout << f[n][m] << endl;
     return 0;
 }
+```
+
+### 2.2 版本2：一维数组优化
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+const int MAXN = 1005;
+int v[MAXN];    // 体积
+int w[MAXN];    // 价值
+int f[MAXN];    // f[j] 表示容量为 j 的最大价值
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    for(int i = 1; i <= n; i++)
+        cin >> v[i] >> w[i];
+
+    for(int i = 1; i <= n; i++)
+        for(int j = m; j >= v[i]; j--) {
+            f[j] = max(f[j], f[j - v[i]] + w[i]);
+        }
+
+    cout << f[m] << endl;
+    return 0;
+}
+```
+
+## 3. 总结
+
+0-1背包问题是动态规划的经典入门题目，通过状态转移方程可以很好地理解动态规划的思想。二维版本更直观，一维版本更高效。
